@@ -74,8 +74,8 @@ const HeroSection: React.FC = () => {
 
                 {/* Typing Animation */}
                 <div className="mt-6 min-h-[64px] flex items-center">
-                    <span className="text-2xl sm:text-4xl lg:text-5xl font-black animated-gradient">
-                        <span>{typedText}</span>
+                    <span className="text-2xl sm:text-4xl lg:text-5xl font-black animated-gradient py-4">
+                        <span className="">{typedText}</span>
                     </span>
 
                     <span className="w-1.5 h-10 bg-violet-500 ml-2 animate-pulse drop-shadow-[0_0_12px_rgba(139,92,246,0.8)]"></span>
