@@ -28,7 +28,7 @@ const NavItem: React.FC<NavItemProps> = ({ name, icon: Icon, href, current, onCl
         `}
     >
         <Icon className="w-5 h-5" />
-        <span className="hidden sm:inline">{name}</span>
+        <span>{name}</span>
     </Link>
 );
 

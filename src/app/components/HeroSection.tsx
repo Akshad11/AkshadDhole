@@ -92,27 +92,36 @@ const HeroSection: React.FC = () => {
                 <div className="mt-10 flex flex-wrap gap-4">
 
                     {/* Primary Button */}
-                    <button
-                        className="group relative inline-flex items-center gap-2 
-                        px-8 py-3 rounded-full text-lg font-medium text-white
-                        bg-gradient-to-r from-violet-600 to-violet-800
-                        shadow-lg shadow-violet-700/40
-                        hover:bg-violet-700/50 hover:shadow-violet-500/70
-                        transition-all hover:scale-[1.05] active:scale-[0.97]"
-                    >
-                        View My Work
-                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </button>
+                    {/* Buttons */}
+                    <div className="mt-10 flex flex-wrap gap-4">
 
-                    {/* Secondary Button */}
-                    <button
-                        className="px-8 py-3 text-lg font-medium text-white 
-                        border border-violet-600 rounded-full
-                        hover:bg-violet-700/40 hover:shadow-lg hover:shadow-violet-800/50
-                        transition-all hover:scale-[1.05] active:scale-[0.97]"
-                    >
-                        Get In Touch
-                    </button>
+                        {/* Primary Button */}
+                        <a href="/projects">
+                            <button
+                                className="group relative inline-flex items-center gap-2 
+                                px-8 py-3 rounded-full text-lg font-medium text-white
+                                bg-gradient-to-r from-violet-600 to-violet-800
+                                shadow-lg shadow-violet-700/40
+                                hover:bg-violet-700/50 hover:shadow-violet-500/70
+                                transition-all hover:scale-[1.05] active:scale-[0.97]"
+                            >
+                                View My Work
+                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </button>
+                        </a>
+
+                        {/* Secondary Button */}
+                        <a href="/contact">
+                            <button
+                                className="px-8 py-3 text-lg font-medium text-white 
+                                border border-violet-600 rounded-full
+                                hover:bg-violet-700/40 hover:shadow-lg hover:shadow-violet-800/50
+                                transition-all hover:scale-[1.05] active:scale-[0.97]"
+                            >
+                                Get In Touch
+                            </button>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
