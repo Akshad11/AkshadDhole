@@ -15,8 +15,8 @@ function Home() {
         <HeroSection />
         <SkillsSlider />
         <ExperienceTree />
-        <ProjectsSection />
         <EducationSection />
+        <ProjectsSection />
       </Layout>
       <Footer />
     </div>
