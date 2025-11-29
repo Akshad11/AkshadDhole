@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, X } from "lucide-react";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Footer: React.FC = () => (
     <footer className="relative w-full bg-gray-900 border-t border-violet-900 mt-16 p-10 overflow-hidden">
@@ -40,7 +41,7 @@ const Footer: React.FC = () => (
 
                 {/* LinkedIn */}
                 <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/akshad-/"
                     className="p-3 rounded-full transition-all duration-500 hover:text-white hover:bg-violet-700/70 hover:shadow-violet-700/50 
           transform hover:-translate-y-1 hover:scale-125 animate-floatIcon delay-150"
                 >
@@ -49,11 +50,11 @@ const Footer: React.FC = () => (
 
                 {/* Twitter */}
                 <a
-                    href="https://twitter.com"
+                    href="https://x.com/AkshadDhole"
                     className="p-3 rounded-full transition-all duration-500 hover:text-white hover:bg-violet-700/70 hover:shadow-violet-700/50 
           transform hover:-translate-y-1 hover:scale-125 animate-floatIcon delay-300"
                 >
-                    <Twitter className="w-5 h-5" />
+                    <FaXTwitter className="w-5 h-5" />
                 </a>
 
             </div>

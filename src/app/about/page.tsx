@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import me from "../assets/me.png"
 import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -54,7 +55,7 @@ export default function AboutPage() {
                     {/* PROFILE IMAGE */}
                     <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-violet-600 shadow-xl shadow-violet-700/40">
                         <Image
-                            src="/profile.jpg"
+                            src={me.src}
                             alt="Akshad Dhole"
                             fill
                             className="object-cover"
