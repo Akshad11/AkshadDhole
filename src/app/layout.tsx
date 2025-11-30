@@ -3,12 +3,15 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://akshad-dhole.vercel.app"),
+
   title: {
     default: "Akshad Dhole — Software Developer",
     template: "%s | Akshad Dhole",
   },
+
   description:
-    "Portfolio of Akshad Dhole — Software Developer specializing in React, Next.js, Node.js, MongoDB, WebSockets and scalable web apps.",
+    "Portfolio of Akshad Dhole — Software Developer specializing in React, Next.js, Node.js, MongoDB, WebSockets, and scalable web applications.",
+
   keywords: [
     "Akshad Dhole",
     "Software Developer",
@@ -18,6 +21,7 @@ export const metadata: Metadata = {
     "MERN Developer",
     "Portfolio",
   ],
+
   authors: [{ name: "Akshad Dhole" }],
   creator: "Akshad Dhole",
 
@@ -32,13 +36,13 @@ export const metadata: Metadata = {
     siteName: "Akshad Dhole Portfolio",
     title: "Akshad Dhole — Software Developer",
     description:
-      "I build modern, scalable, high-performance applications using React, Next.js, Node.js, MongoDB and Tailwind.",
+      "I build modern, scalable applications using React, Next.js, TypeScript, Node.js, MongoDB, and cloud-native architectures.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Akshad Dhole Portfolio Banner",
+        alt: "Akshad Dhole Portfolio Preview",
       },
     ],
   },
@@ -47,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Akshad Dhole — Software Developer",
     description:
-      "Portfolio of software developer specializing in full-stack development.",
+      "Portfolio of Software Developer specializing in full-stack development, React, Next.js, and scalable cloud architectures.",
     images: ["/og-image.png"],
   },
 
@@ -64,13 +68,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google Search Console Verification */}
         <meta
           name="google-site-verification"
-          content="googled266750753bb2782.html"
+          content="googled266750753bb2782"
         />
       </head>
+
       <body className="antialiased">
-        {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -82,10 +87,10 @@ export default function RootLayout({
               url: "https://akshad-dhole.vercel.app",
               sameAs: [
                 "https://github.com/akshad11",
-                "https://linkedin.com/in/YOUR-LINKEDIN-HERE",
+                "https://www.linkedin.com/in/akshad-/",
               ],
               description:
-                "Software Developer specializing in React, Next.js, Node.js, MongoDB, Tailwind, and real-time applications.",
+                "Software Developer experienced in React, Next.js, Node.js, MongoDB, Tailwind, and real-time applications.",
             }),
           }}
         />
