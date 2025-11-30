@@ -62,7 +62,7 @@ export default function EducationSection() {
                             shadow transition duration-300 group-hover:scale-125"></div>
 
                         <h3 className="text-xl font-bold text-white">B.Sc. — Computer Science</h3>
-                        <p className="text-violet-300 text-sm mb-3">Graduated • 2020</p>
+                        <p className="text-violet-300 text-sm mb-3">Graduated • 2023</p>
 
                         <div className="p-4 bg-gray-800 rounded-lg border border-gray-700 
                             group-hover:border-violet-600 transition duration-300">
@@ -85,7 +85,7 @@ export default function EducationSection() {
                             shadow transition duration-300 group-hover:scale-125"></div>
 
                         <h3 className="text-xl font-bold text-white">HSC — Science</h3>
-                        <p className="text-violet-300 text-sm mb-3">Completed • 2017</p>
+                        <p className="text-violet-300 text-sm mb-3">Completed • 2020</p>
 
                         <div className="p-4 bg-gray-800 rounded-lg border border-gray-700 
                             group-hover:border-emerald-600 transition duration-300">
@@ -107,7 +107,7 @@ export default function EducationSection() {
                             shadow transition duration-300 group-hover:scale-125"></div>
 
                         <h3 className="text-xl font-bold text-white">SSC — Secondary School</h3>
-                        <p className="text-violet-300 text-sm mb-3">Completed • 2015</p>
+                        <p className="text-violet-300 text-sm mb-3">Completed • 2018</p>
 
                         <div className="p-4 bg-gray-800 rounded-lg border border-gray-700 
                             group-hover:border-cyan-600 transition duration-300">
