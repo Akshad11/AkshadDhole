@@ -70,7 +70,7 @@ export default function ExperienceSection() {
                         <p className="text-xl font-bold text-white">
                             Software Developer
                         </p>
-                        <p className="text-violet-300 text-sm mb-4">6 Months (Oct 2023 – Apr 2024)</p>
+                        <p className="text-violet-300 text-sm mb-4">6 Months (July 2025 – current)</p>
 
                         <ul className="text-gray-300 space-y-2 p-4 bg-gray-800 rounded-lg border border-gray-700 shadow-md group-hover:border-violet-600">
                             <li>• Worked on QMS, POS, Transportation & FinTech systems.</li>
@@ -91,7 +91,7 @@ export default function ExperienceSection() {
                         <p className="text-xl font-bold text-white">
                             Software Developer Jr.
                         </p>
-                        <p className="text-violet-300 text-sm mb-4">1.6 Years (Apr 2022 – Oct 2023)</p>
+                        <p className="text-violet-300 text-sm mb-4">1.6 Years (Jan 2024 – July 2025)</p>
 
                         <ul className="text-gray-300 space-y-2 p-4 bg-gray-800 rounded-lg border border-gray-700 shadow-md group-hover:border-emerald-600">
                             <li>• Created new features and logic in existing Pascal systems.</li>
@@ -112,7 +112,7 @@ export default function ExperienceSection() {
                         <p className="text-xl font-bold text-white">
                             Software Developer Trainee
                         </p>
-                        <p className="text-violet-300 text-sm mb-4">6 Months (Oct 2021 – Apr 2022)</p>
+                        <p className="text-violet-300 text-sm mb-4">6 Months (July 2022 – Jan 2024)</p>
 
                         <ul className="text-gray-300 space-y-2 p-4 bg-gray-800 rounded-lg border border-gray-700 shadow-md group-hover:border-cyan-600">
                             <li>• Learned Pascal, data flow, and system architecture.</li>
@@ -133,7 +133,7 @@ export default function ExperienceSection() {
                         <p className="text-xl font-bold text-white">
                             Software Developer Intern
                         </p>
-                        <p className="text-violet-300 text-sm mb-4">1 Month (Sep 2021 – Oct 2021)</p>
+                        <p className="text-violet-300 text-sm mb-4">1 Month (June 2023 – July 2023)</p>
 
                         <ul className="text-gray-300 space-y-2 p-4 bg-gray-800 rounded-lg border border-gray-700 shadow-md group-hover:border-pink-600">
                             <li>• Introduced to company tools and workflow.</li>
