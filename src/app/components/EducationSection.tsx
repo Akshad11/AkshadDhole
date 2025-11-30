@@ -1,4 +1,7 @@
 "use client";
+
+import { Book } from "lucide-react";
+
 type Star = {
     top: number;
     left: number;
@@ -34,12 +37,12 @@ export default function EducationSection() {
 
                     {/* ROOT NODE */}
                     <div className="relative mb-10">
-                        <div className="absolute left-[-15px] top-1 w-4 h-4 
+                        <div className="absolute left-[-15px] top-2 w-4 h-4  
                             bg-violet-500 border border-violet-300 rounded-full 
                             shadow-lg shadow-violet-600/40"></div>
 
-                        <h3 className="text-2xl font-bold text-white pl-3">
-                            Academic Journey
+                        <h3 className="text-2xl font-bold flex items-center text-white pl-3">
+                            <Book className="mr-2" />    Academic Journey
                         </h3>
                         <p className="text-violet-300 text-sm pl-3">
                             My foundation in tech and development

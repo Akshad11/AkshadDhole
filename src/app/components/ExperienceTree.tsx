@@ -1,5 +1,7 @@
 "use client";
 import React from 'react';
+import UmangLogo from '../assets/Umanglogo.png';
+import Image from 'next/image';
 
 export default function ExperienceSection() {
     return (
@@ -51,8 +53,10 @@ export default function ExperienceSection() {
                     {/* COMPANY NODE */}
                     <div className="relative mb-12">
                         <div className="absolute left-[-15px] top-3 w-4 h-4 bg-violet-500 border border-violet-300 rounded-full shadow-lg shadow-violet-500/30 "></div>
-
-                        <h3 className="text-3xl font-bold text-white mb-1 ml-3">Umang Software</h3>
+                        <div className="flex items-center mb-1">
+                            <Image src={UmangLogo.src} alt="Umang Software Logo" width={40} height={40} className="inline-block shadow-violet-600/30" />
+                            <h3 className="text-3xl font-bold text-white mb-1">Umang Software</h3>
+                        </div>
                         <p className="text-violet-300 text-sm">Full-time · On-site</p>
                     </div>
 
