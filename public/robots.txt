@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://akshad-dhole.vercel.app/sitemap.xml

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://akshad-portfolio.vercel.app"), // ← CHANGE THIS
+  metadataBase: new URL("https://akshad-dhole.vercel.app"),
   title: {
     default: "Akshad Dhole — Software Developer",
     template: "%s | Akshad Dhole",
@@ -21,16 +21,14 @@ export const metadata: Metadata = {
   authors: [{ name: "Akshad Dhole" }],
   creator: "Akshad Dhole",
 
-  // Canonical
   alternates: {
-    canonical: "https://akshad-portfolio.vercel.app",
+    canonical: "https://akshad-dhole.vercel.app",
   },
 
-  // OpenGraph SEO
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://akshad-portfolio.vercel.app",
+    url: "https://akshad-dhole.vercel.app",
     siteName: "Akshad Dhole Portfolio",
     title: "Akshad Dhole — Software Developer",
     description:
@@ -45,7 +43,6 @@ export const metadata: Metadata = {
     ],
   },
 
-  // Twitter SEO
   twitter: {
     card: "summary_large_image",
     title: "Akshad Dhole — Software Developer",
@@ -66,8 +63,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="googled266750753bb2782.html"
+        />
+      </head>
       <body className="antialiased">
-
         {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
@@ -77,10 +79,10 @@ export default function RootLayout({
               "@type": "Person",
               name: "Akshad Dhole",
               jobTitle: "Software Developer",
-              url: "https://akshad-portfolio.vercel.app",
+              url: "https://akshad-dhole.vercel.app",
               sameAs: [
                 "https://github.com/akshad11",
-                "https://linkedin.com/in/YOUR_LINK", // ← ADD LINKEDIN
+                "https://linkedin.com/in/YOUR-LINKEDIN-HERE",
               ],
               description:
                 "Software Developer specializing in React, Next.js, Node.js, MongoDB, Tailwind, and real-time applications.",

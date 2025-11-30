@@ -29,7 +29,7 @@ export default function ContactPage() {
     return (
         <div>
             <Navbar currentPage="contact" />
-            <section className="relative min-h-screen bg-gray-900 text-white overflow-hidden p-10">
+            <section className="relative min-h-screen bg-gray-900 text-white overflow-hidden p-10 flex justify-between gap-10">
 
                 {/* Background Grid */}
                 <div className="absolute inset-0 opacity-[0.15] pointer-events-none">
@@ -46,7 +46,8 @@ export default function ContactPage() {
                 {/* Floating shapes */}
                 <div className="absolute top-10 right-10 w-72 h-72 bg-violet-700/20 blur-3xl rounded-full animate-floatSlow"></div>
 
-                <div className="relative max-w-xl mx-auto z-10">
+                {/* LEFT SIDE — FORM */}
+                <div className="relative max-w-xl w-full z-10">
                     <h1 className="text-5xl font-extrabold text-transparent bg-clip-text animated-gradient mb-10">
                         Contact Me
                     </h1>
@@ -55,7 +56,6 @@ export default function ContactPage() {
                         onSubmit={handleSubmit}
                         className="space-y-6 bg-gray-800/60 p-8 rounded-xl border border-violet-700/40 backdrop-blur-md shadow-xl"
                     >
-
                         {/* Name */}
                         <div>
                             <label className="block mb-1 text-gray-300">Name</label>
@@ -65,7 +65,7 @@ export default function ContactPage() {
                                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                                 required
                                 className="w-full p-3 bg-gray-900/60 border border-violet-700/40 rounded-lg 
-                            focus:outline-none focus:border-violet-500 transition"
+                    focus:outline-none focus:border-violet-500 transition"
                             />
                         </div>
 
@@ -78,7 +78,7 @@ export default function ContactPage() {
                                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                                 required
                                 className="w-full p-3 bg-gray-900/60 border border-violet-700/40 rounded-lg 
-                            focus:outline-none focus:border-violet-500 transition"
+                    focus:outline-none focus:border-violet-500 transition"
                             />
                         </div>
 
@@ -91,7 +91,7 @@ export default function ContactPage() {
                                 required
                                 rows={6}
                                 className="w-full p-3 bg-gray-900/60 border border-violet-700/40 rounded-lg 
-                            focus:outline-none focus:border-violet-500 transition resize-none"
+                    focus:outline-none focus:border-violet-500 transition resize-none"
                             />
                         </div>
 
@@ -100,14 +100,13 @@ export default function ContactPage() {
                             type="submit"
                             disabled={status === "loading"}
                             className="w-full flex justify-center items-center gap-2 bg-violet-700 hover:bg-violet-600 
-                        py-3 rounded-lg text-lg font-semibold transition shadow-lg 
-                        hover:shadow-violet-600/40 disabled:opacity-50"
+                py-3 rounded-lg text-lg font-semibold transition shadow-lg 
+                hover:shadow-violet-600/40 disabled:opacity-50"
                         >
                             Send Message
                             <Send className="w-5 h-5" />
                         </button>
 
-                        {/* Status Messages */}
                         {status === "success" && (
                             <p className="text-green-400 text-center">Message sent successfully!</p>
                         )}
@@ -116,7 +115,29 @@ export default function ContactPage() {
                         )}
                     </form>
                 </div>
+
+                {/* RIGHT SIDE — CONTACT INFO + RESUME */}
+                <div className="w-[350px] h-fit bg-gray-800/60 p-8 rounded-xl border border-violet-700/40 backdrop-blur-md shadow-xl z-10">
+                    <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
+
+                    <p className="text-gray-300 mb-4">Feel free to email or connect with me directly.</p>
+
+                    <div className="space-y-3 mb-6">
+                        <p className="text-gray-300"><strong>Email:</strong> akshaddhole14@gmail.com</p>
+                        <p className="text-gray-300"><strong>Location:</strong> India</p>
+                    </div>
+
+                    {/* DOWNLOAD RESUME BUTTON */}
+                    <a
+                        href="/resume.pdf"
+                        target="_blank"
+                        className="block text-center bg-violet-700 hover:bg-violet-600 py-3 rounded-lg text-lg font-semibold transition shadow-lg hover:shadow-violet-600/40"
+                    >
+                        Download Resume
+                    </a>
+                </div>
             </section>
+
             <Footer />
         </div>
     );
