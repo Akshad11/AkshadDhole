@@ -3,6 +3,7 @@
 import { ArrowRight } from "lucide-react";
 import { useTypingEffect } from "./hooks/useTypingEffect";
 import { useEffect } from "react";
+import StarField from "./StarField";
 
 const HeroSection: React.FC = () => {
     const roles = [
@@ -31,6 +32,9 @@ const HeroSection: React.FC = () => {
 
             {/* Soft Violet Glow Behind Section */}
             <div className="absolute inset-0 pointer-events-none opacity-20 bg-gradient-to-b from-violet-800/40 to-transparent blur-3xl"></div>
+
+            <StarField count={10} />
+
 
             {/* Tailwind-Style Parallax Grid */}
             <div

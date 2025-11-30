@@ -2,13 +2,15 @@
 import React from 'react';
 import UmangLogo from '../assets/Umanglogo.png';
 import Image from 'next/image';
+import StarField from './StarField';
 
 export default function ExperienceSection() {
     return (
         <section className="py-20 bg-gray-900 border-t border-violet-900 relative">
             {/* BACKGROUND GRID + ABSTRACT SHAPES */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
 
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                <StarField count={20} />
                 {/* VIOLET GRID LINES */}
                 <svg className="absolute inset-0 w-full h-full opacity-[0.18]" xmlns="http://www.w3.org/2000/svg">
                     <defs>

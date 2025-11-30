@@ -1,6 +1,7 @@
 "use client";
 
 import { Book } from "lucide-react";
+import StarField from "./StarField";
 
 type Star = {
     top: number;
@@ -23,7 +24,7 @@ export default function EducationSection() {
 
     return (
         <section className="py-20 bg-gray-900 border-t border-violet-900 relative">
-
+            <StarField count={20} />
             <div className="absolute inset-0 diamond-grid"></div>
 
             <h2 className="text-4xl font-bold text-white mb-12 text-center text-transparent bg-clip-text animated-gradient">

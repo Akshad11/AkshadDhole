@@ -2,11 +2,12 @@
 import Image from "next/image";
 import { ExternalLink, Github } from "lucide-react";
 import { projects } from "../data/projectsData";
+import StarField from "./StarField";
 
 export default function ProjectsSection() {
     return (
         <section className="py-20 bg-gray-900 border-t border-violet-900 relative">
-
+            <StarField count={20} />
             {/* Background (Same as your Experience/Hero) */}
             <div className="absolute inset-0 opacity-[0.15] pointer-events-none">
                 <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
