@@ -5,6 +5,7 @@ import me from "../assets/me.png"
 import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Skills from "../components/Skill";
 
 export default function AboutPage() {
 
@@ -116,7 +117,13 @@ export default function AboutPage() {
                             </div>
                         ))}
                     </div>
+
                 </div>
+
+                <div>
+                    <Skills />
+                </div>
+
 
                 {/* CTA */}
                 <div className="mt-16 text-center reveal-about">

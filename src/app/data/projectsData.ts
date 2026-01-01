@@ -1,4 +1,5 @@
 // projectsData.ts
+import { SkillCategory } from "@/types/types"
 import Image1 from "../assets/project1.png"
 import Image2 from "../assets/project2.png"
 import Image3 from "../assets/project3.png"
@@ -52,6 +53,24 @@ export const projects = [
     },
 ];
 
+export const skills: SkillCategory[] = [
+    {
+        category: "Frontend Core",
+        items: ["React.js", "Next.js", "TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3"]
+    },
+    {
+        category: "Styling & UI",
+        items: ["Tailwind CSS", "Framer Motion", "Material UI", "Styled Components", "Shadcn/UI"]
+    },
+    {
+        category: "State & Data",
+        items: ["Redux Toolkit", "React Query", "Zustand", "Context API", "GraphQL"]
+    },
+    {
+        category: "Tools & DevOps",
+        items: ["Git", "Webpack", "Vite", "Vercel", "Jest", "CI/CD"]
+    }
+];
 
 export const projectBlogs = [
     {
