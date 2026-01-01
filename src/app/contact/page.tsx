@@ -1,35 +1,62 @@
 "use client";
 
 import { useState } from "react";
-import { Send } from "lucide-react";
+import { Send, Loader2 } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-export default function ContactPage() {
-    const [form, setForm] = useState({ name: "", email: "", message: "" });
-    const [status, setStatus] = useState("");
+type FormState = {
+    name: string;
+    email: string;
+    message: string;
+};
 
-    async function handleSubmit(e: any) {
+type Status = "idle" | "loading" | "success" | "error";
+
+export default function ContactPage() {
+    const [form, setForm] = useState<FormState>({
+        name: "",
+        email: "",
+        message: "",
+    });
+
+    const [status, setStatus] = useState<Status>("idle");
+
+    const handleChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) => {
+        const { name, value } = e.target;
+        setForm((prev) => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setStatus("loading");
 
-        const res = await fetch("/api/contact", {
-            method: "POST",
-            body: JSON.stringify(form),
-        });
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(form),
+            });
 
-        if (res.ok) {
+            if (!res.ok) throw new Error("Request failed");
+
             setStatus("success");
             setForm({ name: "", email: "", message: "" });
-        } else {
+        } catch (error) {
+            console.error(error);
             setStatus("error");
         }
-    }
+    };
 
     return (
         <div>
             <Navbar currentPage="contact" />
-            <section className="relative min-h-screen bg-gray-900 text-white overflow-hidden p-10 flex justify-between gap-10">
+
+            <section className="relative min-h-screen bg-gray-900 text-white overflow-hidden px-6 py-20 flex flex-col lg:flex-row gap-10 justify-center">
 
                 {/* Background Grid */}
                 <div className="absolute inset-0 opacity-[0.15] pointer-events-none">
@@ -43,10 +70,10 @@ export default function ContactPage() {
                     </svg>
                 </div>
 
-                {/* Floating shapes */}
+                {/* Floating Shape */}
                 <div className="absolute top-10 right-10 w-72 h-72 bg-violet-700/20 blur-3xl rounded-full animate-floatSlow"></div>
 
-                {/* LEFT SIDE — FORM */}
+                {/* LEFT — FORM */}
                 <div className="relative max-w-xl w-full z-10">
                     <h1 className="text-5xl font-extrabold text-transparent bg-clip-text animated-gradient mb-10">
                         Contact Me
@@ -58,40 +85,49 @@ export default function ContactPage() {
                     >
                         {/* Name */}
                         <div>
-                            <label className="block mb-1 text-gray-300">Name</label>
+                            <label htmlFor="name" className="block mb-1 text-gray-300">
+                                Name
+                            </label>
                             <input
+                                id="name"
+                                name="name"
                                 type="text"
                                 value={form.name}
-                                onChange={(e) => setForm({ ...form, name: e.target.value })}
+                                onChange={handleChange}
                                 required
-                                className="w-full p-3 bg-gray-900/60 border border-violet-700/40 rounded-lg 
-                    focus:outline-none focus:border-violet-500 transition"
+                                className="w-full p-3 bg-gray-900/60 border border-violet-700/40 rounded-lg focus:outline-none focus:border-violet-500 transition"
                             />
                         </div>
 
                         {/* Email */}
                         <div>
-                            <label className="block mb-1 text-gray-300">Email</label>
+                            <label htmlFor="email" className="block mb-1 text-gray-300">
+                                Email
+                            </label>
                             <input
+                                id="email"
+                                name="email"
                                 type="email"
                                 value={form.email}
-                                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                                onChange={handleChange}
                                 required
-                                className="w-full p-3 bg-gray-900/60 border border-violet-700/40 rounded-lg 
-                    focus:outline-none focus:border-violet-500 transition"
+                                className="w-full p-3 bg-gray-900/60 border border-violet-700/40 rounded-lg focus:outline-none focus:border-violet-500 transition"
                             />
                         </div>
 
                         {/* Message */}
                         <div>
-                            <label className="block mb-1 text-gray-300">Message</label>
+                            <label htmlFor="message" className="block mb-1 text-gray-300">
+                                Message
+                            </label>
                             <textarea
-                                value={form.message}
-                                onChange={(e) => setForm({ ...form, message: e.target.value })}
-                                required
+                                id="message"
+                                name="message"
                                 rows={6}
-                                className="w-full p-3 bg-gray-900/60 border border-violet-700/40 rounded-lg 
-                    focus:outline-none focus:border-violet-500 transition resize-none"
+                                value={form.message}
+                                onChange={handleChange}
+                                required
+                                className="w-full p-3 bg-gray-900/60 border border-violet-700/40 rounded-lg focus:outline-none focus:border-violet-500 transition resize-none"
                             />
                         </div>
 
@@ -99,35 +135,52 @@ export default function ContactPage() {
                         <button
                             type="submit"
                             disabled={status === "loading"}
-                            className="w-full flex justify-center items-center gap-2 bg-violet-700 hover:bg-violet-600 
-                py-3 rounded-lg text-lg font-semibold transition shadow-lg 
-                hover:shadow-violet-600/40 disabled:opacity-50"
+                            className="w-full flex justify-center items-center gap-2 bg-violet-700 hover:bg-violet-600 py-3 rounded-lg text-lg font-semibold transition shadow-lg hover:shadow-violet-600/40 disabled:opacity-50"
                         >
-                            Send Message
-                            <Send className="w-5 h-5" />
+                            {status === "loading" ? (
+                                <>
+                                    Sending...
+                                    <Loader2 className="w-5 h-5 animate-spin" />
+                                </>
+                            ) : (
+                                <>
+                                    Send Message
+                                    <Send className="w-5 h-5" />
+                                </>
+                            )}
                         </button>
 
                         {status === "success" && (
-                            <p className="text-green-400 text-center">Message sent successfully!</p>
+                            <p className="text-green-400 text-center">
+                                Message sent successfully!
+                            </p>
                         )}
+
                         {status === "error" && (
-                            <p className="text-red-400 text-center">Something went wrong. Try again.</p>
+                            <p className="text-red-400 text-center">
+                                Something went wrong. Please try again.
+                            </p>
                         )}
                     </form>
                 </div>
 
-                {/* RIGHT SIDE — CONTACT INFO + RESUME */}
-                <div className="w-[350px] h-fit bg-gray-800/60 p-8 rounded-xl border border-violet-700/40 backdrop-blur-md shadow-xl z-10">
+                {/* RIGHT — CONTACT INFO */}
+                <aside className="w-full lg:w-[350px] h-fit bg-gray-800/60 p-8 rounded-xl border border-violet-700/40 backdrop-blur-md shadow-xl z-10">
                     <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
 
-                    <p className="text-gray-300 mb-4">Feel free to email or connect with me directly.</p>
+                    <p className="text-gray-300 mb-4">
+                        Feel free to email or connect with me directly.
+                    </p>
 
                     <div className="space-y-3 mb-6">
-                        <p className="text-gray-300"><strong>Email:</strong> akshaddhole14@gmail.com</p>
-                        <p className="text-gray-300"><strong>Location:</strong> India</p>
+                        <p className="text-gray-300">
+                            <strong>Email:</strong> akshaddhole14@gmail.com
+                        </p>
+                        <p className="text-gray-300">
+                            <strong>Location:</strong> India
+                        </p>
                     </div>
 
-                    {/* DOWNLOAD RESUME BUTTON */}
                     <a
                         href="/resume.pdf"
                         target="_blank"
@@ -135,7 +188,7 @@ export default function ContactPage() {
                     >
                         Download Resume
                     </a>
-                </div>
+                </aside>
             </section>
 
             <Footer />
