@@ -13,6 +13,15 @@ app.use(cors({ origin: process.env.CLIENT_URL }));
 app.use(express.json());
 app.use(morgan("dev"));
 
+
+app.get("/health", (req, res) => {
+    res.status(200).json({ status: "ok", uptime: process.uptime() });
+});
+
+app.get("/", (req, res) => {
+    res.status(200).send("Service is running");
+});
+
 app.use("/api/contact", contactRoutes);
 
 app.use(errorHandler);
